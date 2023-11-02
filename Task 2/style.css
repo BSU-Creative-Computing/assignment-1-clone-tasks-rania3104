@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    margin:auto;
 }
 
 header{
@@ -100,14 +101,14 @@ img {
 .movie1 {
     padding: 0;
     height:850px;
-    flex: 2 ;
+    flex: 3 ;
     margin-top: 10px;
 
 }
 
 .movie1 img{
-    height:590px;
-    width:auto; 
+    height:auto;
+    width:100%; 
 }
 .movie2,.movie3,.movie4,.movie5{
     margin: 6px;
@@ -125,4 +126,83 @@ img {
 
 p{
     font-size:14px;
+}
+
+.menu{
+    display:none;
+}
+
+@media screen and (max-width:1280px) and (min-width:1025px){
+    nav{
+        width:auto;
+    }
+    .container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .search-bar {
+        margin-left:200px;
+        margin-right:200px;
+    }
+    body{
+        margin:0px;
+    }
+    .movie1{
+        max-height:100%;
+    }
+}
+
+@media screen and (max-width:1024px) and (min-width:801px){
+    nav{
+        width:auto;
+    }
+    .container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .search-bar {
+        margin-left:20px;
+        margin-right:20px;
+        padding-right:80px;
+    }
+    body{
+        margin:0px;
+    }
+
+    .flexbox-right{
+        flex:1;
+        display:block;
+    }
+    .movie{
+        height:auto;
+        padding-bottom:70px;
+    }
+
+    .movie1{
+        height:3%;
+    }
+}
+@media screen and (max-width:800px) and (min-width:481px){
+    .navbar, .search-bar{
+        display:none;
+    }
+    nav{
+        width:auto;
+    }
+    .menu{
+        display:block;
+    }
+    .container {
+        margin-left: 0px;
+        margin-right: 0px;
+        display: block;
+    }
+
+    .movie{
+        height:auto;
+        padding-bottom:70px;
+    }
+
 }

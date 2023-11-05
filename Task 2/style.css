@@ -1,10 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+body{
+    font-family: 'Titillium Web', sans-serif;
     margin:auto;
 }
 
 header{
     margin-bottom:10px;
+}
+
+footer{
+    text-align: center;
+    margin:20px;
+    font-size:10px;
 }
 nav {
     display: flex;
@@ -12,12 +19,13 @@ nav {
     align-items: center;
     background-color: #1E90FF;
     text-align: center;
+    height:70px;
 }
 
 .logo {
     color: #fff;
     font-size: 24px;
-    margin-left:30px;
+    margin-left:20px;
     margin-right:80px;
 }
 
@@ -25,14 +33,13 @@ nav {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    margin-left:300px;
-    margin-right:300px;
+    margin-left:370px;
+    margin-right:430px;
     padding:10px;
-    padding-right:120px;
 }
 
 .search-bar input {
-    width: 70%;
+    width: 30%;
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -48,6 +55,7 @@ nav ul {
 nav ul li {
     display: inline;
     margin-right: 20px;
+    font-size:15px;
 }
 
 nav a {
@@ -96,6 +104,7 @@ img {
     cursor: pointer;
     float:right;
     font-size:10px;
+    border-radius: 5px;
 }
 
 .movie1 {
@@ -193,6 +202,8 @@ p{
     }
     .menu{
         display:block;
+        color: #fff;
+        margin-right:20px;
     }
     .container {
         margin-left: 0px;
@@ -203,6 +214,34 @@ p{
     .movie{
         height:auto;
         padding-bottom:70px;
+    }
+
+}
+@media screen and (max-width:480px){
+    .navbar, .search-bar{
+        display:none;
+    }
+    nav{
+        width:auto;
+    }
+    .menu{
+        display:block;
+        color: #fff;
+        margin-right:20px;
+    }
+    .container {
+        margin-left: 0px;
+        margin-right: 0px;
+        display: block;
+    }
+
+    .movie{
+        height:auto;
+        padding-bottom:70px;
+    }
+
+    .flexbox-right{
+        flex-direction: column;
     }
 
 }

@@ -1,0 +1,75 @@
+// Define mixins
+
+@mixin center-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin media-query($breakpoint) {
+    @media screen and (min-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
+// Define variables
+
+$circle-radii: 70px 80px 90px 100px;
+$row-colors: #4e89ae #43658b #ed6663 #ffa372;
+$header-footer-bg-color: #8ccff7;
+$hover-color: #444;
+
+// Global styles
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: $header-footer-bg-color;
+    text-align: center;
+}
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .row {
+        display: flex;
+        margin: 10px;
+
+        .circle {
+            border-radius: 50%;
+            margin: 5px;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: $hover-color;
+            }
+        }
+    }
+
+    @for $i from 1 through 4 {
+        .row-#{$i} {
+            background-color: nth($row-colors, $i);
+        }
+    }
+
+    .footer {
+        background-color: $header-footer-bg-color;
+        height: 50px;
+    }
+}
+
+// Apply the centering mixin to elements as needed
+
+.header, .container, .row, .circle {
+    @include center-element;
+}

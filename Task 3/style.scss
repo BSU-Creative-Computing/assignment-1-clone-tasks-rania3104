@@ -6,8 +6,19 @@
 }
 
 // Mixin for handling media queries
-@mixin media-query($breakpoint) {
-  @media (min-width: $breakpoint) {
+@mixin media-query($breakpoint,$breakpointmax) {
+  @media (min-width: $breakpoint) and (max-width:$breakpointmax) {
+    @content;
+  }
+}
+@mixin media-query2($breakpoint) {
+  @media (min-width: $breakpoint){
+    @content;
+  }
+}
+
+@mixin media-query3($breakpointmax) {
+  @media (max-width: $breakpointmax){
     @content;
   }
 }
@@ -26,11 +37,10 @@ $circle-radius-2: 80px;
 $circle-radius-3: 90px;
 $circle-radius-4: 100px;
 
-// Define breakpoints
-$breakpoint-small: 480px;
-$breakpoint-medium: 801px;
-$breakpoint-large: 621px;
-
+//Basic SCSS
+body{
+  margin:0;
+}
 // SCSS for the header
 .header {
   background-color: $header-footer-bg-color;
@@ -44,8 +54,8 @@ $breakpoint-large: 621px;
 // SCSS for the container
 .container {
   .row {
-    height: 100px;
-    margin-bottom: 20px;
+    height: 40px;
+    margin:0;
 
     &:hover {
       background-color: $circle-hover-color;
@@ -54,15 +64,15 @@ $breakpoint-large: 621px;
 
   // Circles should be inline at 621px and above
   // Otherwise, they should stack vertically
-  .row-6 {
-    @include media-query($breakpoint-large) {
+  .circle {
+    @include media-query2(621) {
       display: flex;
       justify-content: space-around;
       .circle {
         flex: 1;
       }
     }
-    @include media-query($breakpoint-medium) {
+    @include media-query2(481) {
       display: block;
       .circle {
         width: 100%;
@@ -119,14 +129,14 @@ $breakpoint-large: 621px;
 }
 
 // Media queries for header image URL
-@include media-query($breakpoint-medium) {
+@include media-query(481,800) {
   .header .header-image {
     content: url('https://via.placeholder.com/300');
   }
 }
 
-@include media-query($breakpoint-small) {
+@include media-query3(480) {
   .header .header-image {
-    content: url('https://via.placeholder.com/300');
+    content: url('https://via.placeholder.com/200');
   }
 }

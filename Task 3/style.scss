@@ -1,75 +1,132 @@
-// Define mixins
-
-@mixin center-element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// Mixin for centering elements
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+// Mixin for handling media queries
 @mixin media-query($breakpoint) {
-    @media screen and (min-width: #{$breakpoint}) {
-        @content;
-    }
+  @media (min-width: $breakpoint) {
+    @content;
+  }
 }
 
-// Define variables
-
-$circle-radii: 70px 80px 90px 100px;
-$row-colors: #4e89ae #43658b #ed6663 #ffa372;
+// Define colors
+$circle-color-1: #4e89ae;
+$circle-color-2: #43658b;
+$circle-color-3: #ed6663;
+$circle-color-4: #ffa372;
 $header-footer-bg-color: #8ccff7;
-$hover-color: #444;
+$circle-hover-color: #444;
 
-// Global styles
+// Define circle radii
+$circle-radius-1: 70px;
+$circle-radius-2: 80px;
+$circle-radius-3: 90px;
+$circle-radius-4: 100px;
 
-body {
-    margin: 0;
-    padding: 0;
-}
+// Define breakpoints
+$breakpoint-small: 480px;
+$breakpoint-medium: 801px;
+$breakpoint-large: 621px;
 
+// SCSS for the header
 .header {
-    background-color: $header-footer-bg-color;
-    text-align: center;
-}
+  background-color: $header-footer-bg-color;
+  text-align: center;
 
-.header-image {
+  .header-image {
     max-width: 100%;
-    height: auto;
+  }
 }
 
+// SCSS for the container
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .row {
+    height: 100px;
+    margin-bottom: 20px;
 
-    .row {
-        display: flex;
-        margin: 10px;
-
-        .circle {
-            border-radius: 50%;
-            margin: 5px;
-            transition: background-color 0.3s;
-
-            &:hover {
-                background-color: $hover-color;
-            }
-        }
+    &:hover {
+      background-color: $circle-hover-color;
     }
+  }
 
-    @for $i from 1 through 4 {
-        .row-#{$i} {
-            background-color: nth($row-colors, $i);
-        }
+  // Circles should be inline at 621px and above
+  // Otherwise, they should stack vertically
+  .row-6 {
+    @include media-query($breakpoint-large) {
+      display: flex;
+      justify-content: space-around;
+      .circle {
+        flex: 1;
+      }
     }
+    @include media-query($breakpoint-medium) {
+      display: block;
+      .circle {
+        width: 100%;
+      }
+    }
+  }
 
-    .footer {
-        background-color: $header-footer-bg-color;
-        height: 50px;
-    }
+  .row-1 {
+    background-color: $circle-color-1;
+  }
+  .row-2 {
+    background-color: $circle-color-2;
+  }
+  .row-3 {
+    background-color: $circle-color-3;
+  }
+  .row-4 {
+    background-color: $circle-color-4;
+  }
+
+  .circle {
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+
+  .circle-1 {
+    background-color: $circle-color-1;
+    width: $circle-radius-1;
+    height: $circle-radius-1;
+  }
+
+  .circle-2 {
+    background-color: $circle-color-2;
+    width: $circle-radius-2;
+    height: $circle-radius-2;
+  }
+
+  .circle-3 {
+    background-color: $circle-color-3;
+    width: $circle-radius-3;
+    height: $circle-radius-3;
+  }
+  .circle-4 {
+    background-color: $circle-color-4;
+    width: $circle-radius-4;
+    height: $circle-radius-4;
+  }
 }
 
-// Apply the centering mixin to elements as needed
+// SCSS for the footer
+.footer {
+  background-color: $header-footer-bg-color;
+  height: 50px;
+}
 
-.header, .container, .row, .circle {
-    @include center-element;
+// Media queries for header image URL
+@include media-query($breakpoint-medium) {
+  .header .header-image {
+    content: url('https://via.placeholder.com/300');
+  }
+}
+
+@include media-query($breakpoint-small) {
+  .header .header-image {
+    content: url('https://via.placeholder.com/300');
+  }
 }

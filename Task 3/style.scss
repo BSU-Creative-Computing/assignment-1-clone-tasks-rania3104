@@ -39,15 +39,18 @@ $circle-radius-4: 100px;
 
 //Basic SCSS
 body{
+  background-color: #e2eff1;
   margin:0;
 }
 // SCSS for the header
 .header {
   background-color: $header-footer-bg-color;
   text-align: center;
+  margin-bottom:50px;
 
   .header-image {
     max-width: 100%;
+    margin-bottom:-3px;
   }
 }
 
@@ -64,18 +67,13 @@ body{
 
   // Circles should be inline at 621px and above
   // Otherwise, they should stack vertically
-  .circle {
-    @include media-query2(621) {
+  .circles {
+    @include media-query3(620) {
       display: flex;
+      flex-direction: column;
       justify-content: space-around;
-      .circle {
+      .circles {
         flex: 1;
-      }
-    }
-    @include media-query2(481) {
-      display: block;
-      .circle {
-        width: 100%;
       }
     }
   }
@@ -93,9 +91,22 @@ body{
     background-color: $circle-color-4;
   }
 
+  .circles{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
   .circle {
     border-radius: 50%;
-    transition: background-color 0.3s;
+    display: inline-flex;
+    justify-content: space-around;
+    margin:5px;
+    
+    &:hover {
+      background-color: $circle-hover-color;
+    }
   }
 
   .circle-1 {

@@ -68,7 +68,7 @@ body{
   // Circles should be inline at 621px and above
   // Otherwise, they should stack vertically
   .circles {
-    @include media-query3(620) {
+    @include media-query3(620px) {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -140,13 +140,13 @@ body{
 }
 
 // Media queries for header image URL
-@include media-query(481,800) {
+@include media-query(481px,800px) {
   .header .header-image {
     content: url('https://via.placeholder.com/300');
   }
 }
 
-@include media-query3(480) {
+@include media-query3(480px) {
   .header .header-image {
     content: url('https://via.placeholder.com/200');
   }

@@ -20,7 +20,7 @@ body {
 .container .row:hover {
   background-color: #444;
 }
-@media (max-width: 620) {
+@media (max-width: 620px) {
   .container .circles {
     display: flex;
     flex-direction: column;
@@ -84,12 +84,12 @@ body {
   height: 50px;
 }
 
-@media (min-width: 481) and (max-width: 800) {
+@media (min-width: 481px) and (max-width: 800px) {
   .header .header-image {
     content: url("https://via.placeholder.com/300");
   }
 }
-@media (max-width: 480) {
+@media (max-width: 480px) {
   .header .header-image {
     content: url("https://via.placeholder.com/200");
   }

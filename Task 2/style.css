@@ -1,27 +1,55 @@
+/*importing the font*/
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+
+/*general body styles*/
 body{
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Titillium Web', sans-serif; /*changing the font*/
     margin:auto;
 }
 
+/*header styles*/
 header{
     margin-bottom:10px;
 }
 
+/*footer styles*/
 footer{
     text-align: center;
     margin:20px;
     font-size:10px;
 }
+
+/*navigation styles*/
 nav {
-    display: flex;
+    display: flex;/*setting the display to flex*/
     justify-content: space-between;
-    align-items: center;
+    align-items: center;/*aligning items to center*/
     background-color: #1E90FF;
     text-align: center;
-    height:70px;
+    height:70px;/*setting the height*/
 }
 
+/*navigation list styles*/
+nav ul {
+    list-style: none; /*to remove bullet points*/
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /*to align the items in a line*/
+    margin-right: 20px;
+    font-size:15px;
+}
+
+/*navigation link styles*/
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/*Logo - What's On styles*/
 .logo {
     color: #fff;
     font-size: 24px;
@@ -29,9 +57,10 @@ nav {
     margin-right:80px;
 }
 
+/*search bar styles*/
 .search-bar {
     flex-grow: 1;
-    display: flex;
+    display: flex;/*setting display to flex*/
     align-items: center;
     margin-left:370px;
     margin-right:430px;
@@ -42,71 +71,18 @@ nav {
     width: 30%;
     padding: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 4px; /*giving the search bar rounded corners*/
     margin-right: 200px;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-    font-size:15px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-}
-
+/*general container styles*/
 .container {
-    display: flex;
+    display: flex;/*setting display to flex*/
     margin-left: 240px;
     margin-right: 240px;
 }
 
-.flexbox-right{
-    flex: 2;
-    display: flex;
-}
-
-
-.row1,.row2{
-    flex: 1;
-}
-
-.movie {
-    background-color: #f0f0f0a2;
-    border: 1px solid #ccc;
-    padding: 13px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    height: 550px;
-}
-
-img {
-    width: 100%;
-    height: auto;
-}
-
-.movie h3 {
-    margin: 10px 0;
-}
-
-.movie button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    float:right;
-    font-size:10px;
-    border-radius: 5px;
-}
-
+/*1st div styles*/
 .movie1 {
     padding: 0;
     height:850px;
@@ -115,13 +91,34 @@ img {
 
 }
 
-.movie1 img{
-    height:auto;
-    width:100%; 
+/*2nd div styles*/
+.flexbox-right{
+    flex: 2;/*ratio*/
+    display: flex;
 }
-.movie2,.movie3,.movie4,.movie5{
-    margin: 6px;
 
+.row1,.row2{
+    flex: 1;/*ratio*/
+}
+
+/*general movie styles*/
+.movie {
+    background-color: #f0f0f0a2;
+    border: 1px solid #ccc;
+    padding: 13px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);/*adding shadow behind the box*/
+    height: 550px;
+}
+
+/*image styles*/
+img {
+    width: 100%;
+    height: auto;
+}
+
+/*text styles*/
+.movie h3 {
+    margin: 10px 0;
 }
 
 .movie1 h3, .movie1 p   {
@@ -129,19 +126,44 @@ img {
     padding-left:20px;
 }
 
-.movie1 button{
-    margin-right:20px;
-}
-
 p{
     font-size:14px;
 }
 
-.menu{
-    display:none;
+/*button styles*/
+.movie button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    float:right; /*to make the button stay on the right*/
+    font-size:10px;
+    border-radius: 5px;/*rounded corners*/
 }
 
-@media screen and (max-width:1280px) and (min-width:1025px){
+.movie1 button{
+    margin-right:20px;
+}
+
+/*avengers styles*/
+.movie1 img{
+    height:auto;
+    width:100%; 
+}
+
+/*the rest of the movies styles*/
+.movie2,.movie3,.movie4,.movie5{
+    margin: 6px;
+
+}
+
+.menu{
+    display:none;/*the display is set to none so it is not visible in the normal screen*/
+}
+
+/*media queries*/
+@media screen and (max-width:1280px) and (min-width:1025px){  /*for devices within the width of 1025px and 1280px*/
     nav{
         width:auto;
     }
@@ -162,7 +184,7 @@ p{
     }
 }
 
-@media screen and (max-width:1024px) and (min-width:801px){
+@media screen and (max-width:1024px) and (min-width:801px){ /*for devices within the width of 801px and 1024px*/
     nav{
         width:auto;
     }
@@ -193,15 +215,16 @@ p{
         height:3%;
     }
 }
-@media screen and (max-width:800px) and (min-width:481px){
+
+@media screen and (max-width:800px) and (min-width:481px){ /*for devices within the width of 481px and 800px*/
     .navbar, .search-bar{
-        display:none;
+        display:none;  /*the display is set to none to make the navigation bar and search bar disappear*/
     }
     nav{
         width:auto;
     }
     .menu{
-        display:block;
+        display:block; /*instead of the navigation bar and search bar, the menu will appear now.*/
         color: #fff;
         margin-right:20px;
     }
@@ -217,7 +240,7 @@ p{
     }
 
 }
-@media screen and (max-width:480px){
+@media screen and (max-width:480px){ /*for devices under the width of 480px*/
     .navbar, .search-bar{
         display:none;
     }
@@ -241,7 +264,7 @@ p{
     }
 
     .flexbox-right{
-        flex-direction: column;
+        flex-direction: column; /*to make everything go in one column*/
     }
 
 }

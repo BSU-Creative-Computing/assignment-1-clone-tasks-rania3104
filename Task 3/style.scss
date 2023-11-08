@@ -44,7 +44,7 @@ body{
 }
 // SCSS for the header
 .header {
-  background-color: $header-footer-bg-color;
+  background-color: $header-footer-bg-color;//setting the color
   text-align: center;
   margin-bottom:50px;
 
@@ -61,15 +61,14 @@ body{
     margin:0;
 
     &:hover {
-      background-color: $circle-hover-color;
+      background-color: $circle-hover-color;//adding hover color
     }
   }
 
-  // Circles should be inline at 621px and above
-  // Otherwise, they should stack vertically
+  // "Circles should be inline at 621px and above, otherwise, they should stack vertically"
   .circles {
     @include media-query3(620px) {
-      display: flex;
+      display: flex; //to make the circles stack vertically
       flex-direction: column;
       justify-content: space-around;
       .circles {
@@ -78,6 +77,7 @@ body{
     }
   }
 
+  //setting the background color for each of the rows
   .row-1 {
     background-color: $circle-color-1;
   }
@@ -91,24 +91,27 @@ body{
     background-color: $circle-color-4;
   }
 
+  //circles div styles
   .circles{
-    display:flex;
-    justify-content: center;
+    display:flex; //changing display to flex
+    justify-content: center; //to make the circles stay in the center
     align-items: center;
     margin-top: 60px;
     margin-bottom: 60px;
   }
+
   .circle {
-    border-radius: 50%;
-    display: inline-flex;
+    border-radius: 50%; //border radius will make the div a circle
+    display: inline-flex; //to make sure the circles are in a line
     justify-content: space-around;
-    margin:5px;
+    margin:5px; //to give the circles space between them
     
     &:hover {
-      background-color: $circle-hover-color;
+      background-color: $circle-hover-color; //adding hover color
     }
   }
 
+  //setting the styles for each of the circles
   .circle-1 {
     background-color: $circle-color-1;
     width: $circle-radius-1;
@@ -140,14 +143,14 @@ body{
 }
 
 // Media queries for header image URL
-@include media-query(481px,800px) {
+@include media-query(481px,800px) { //for devices within the width of 481px and 800px
   .header .header-image {
-    content: url('https://via.placeholder.com/300');
+    content: url('https://via.placeholder.com/300'); //changes the picture
   }
 }
 
-@include media-query3(480px) {
+@include media-query3(480px) { //for devices under the width of 480px
   .header .header-image {
-    content: url('https://via.placeholder.com/200');
+    content: url('https://via.placeholder.com/200'); //changes the picture
   }
 }

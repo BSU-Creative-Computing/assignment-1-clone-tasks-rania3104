@@ -82,21 +82,6 @@ nav a {
     margin-right: 240px;
 }
 
-/*1st div styles*/
-.movie1 {
-    padding: 0;
-    height:850px;
-    flex: 3 ;
-    margin-top: 10px;
-
-}
-
-/*2nd div styles*/
-.flexbox-right{
-    flex: 2;/*ratio*/
-    display: flex;
-}
-
 .row1,.row2{
     flex: 1;/*ratio*/
 }
@@ -107,8 +92,23 @@ nav a {
     border: 1px solid #ccc;
     padding: 13px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);/*adding shadow behind the box*/
-    height: 550px;
+    height: 530px;
 }
+/*1st div styles*/
+.movie1 {
+    padding: 0;
+    height:800px;
+    flex: 3 ;
+    margin-top: 10px;
+}
+
+/*2nd div styles*/
+.flexbox-right{
+    flex: 2;/*ratio*/
+    display: flex;
+    margin-top:4px;
+}
+
 
 /*image styles*/
 img {
@@ -263,6 +263,10 @@ p{
         padding-bottom:70px;
     }
 
+    .movie1{
+        margin-right:6px;
+        margin-left:6px;
+    }
     .flexbox-right{
         flex-direction: column; /*to make everything go in one column*/
     }
